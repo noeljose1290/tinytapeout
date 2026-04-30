@@ -23,7 +23,7 @@ async def test_project(dut):
     await ClockCycles(dut.clk, 1)
 
     # TX line should be HIGH (idle)
-    assert dut.uo_out.value & 1 == 1
+    assert dut.uo_out.value.integer & 1 == 1
 
     # ---------------------------
     # Send a byte
